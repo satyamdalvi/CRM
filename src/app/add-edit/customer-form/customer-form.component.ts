@@ -27,12 +27,9 @@ export class CustomerFormComponent implements OnInit{
     })
 
     this.activatedRoute.queryParams.subscribe((params:any) => {
-      console.log('params =>', params);
       this.urlData = params
       if(params.type === 'create'){
-        console.log('create');
       }else if(params.type === 'edit'){
-        console.log('not create');
         this.customerForm.patchValue({
           firstname: params.firstname,
           lastname: params.lastname,
@@ -45,32 +42,22 @@ export class CustomerFormComponent implements OnInit{
   }
 
   onSubmit(customerForm:any){
-    console.log('customerForm =>', customerForm);
     if(customerForm.valid){
       const data = this.userService.customData
-      console.log(data);
       if(this.urlData.type === 'create'){
-        console.log('inside if');
         data.unshift({
           email: customerForm.value.email,
           firstname: customerForm.value.firstname,
           lastname: customerForm.value.lastname,
           phonenumber: customerForm.value.phonenumber
         })
-        console.log('data =>', data);
         this.userService.customData = data;
         this.router.navigate(['dashboard'])
       }else if(this.urlData.type === 'edit'){
-        console.log('inside else if');
         const newArray = data.map((item:any) => item.email === customerForm.value.email?{email: customerForm.value.email,
           firstname: customerForm.value.firstname,
           lastname: customerForm.value.lastname,
           phonenumber: customerForm.value.phonenumber}:item)
-        // data.map((item:any)=>{
-        //   console.log('item =>', item);
-        //   item.email === customerForm.value.email?{}
-        // })
-        console.log('newArray =>', newArray);
         this.userService.customData = newArray;
         this.router.navigate(['dashboard'])
       }

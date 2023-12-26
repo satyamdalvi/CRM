@@ -22,16 +22,12 @@ export class DashboardComponent implements OnInit{
 
   customer_data(){
     this.customerData = this.userService.customData
-    console.log('customerData =>', this.customerData);
   }
 
   search(event:any){
-    // console.log('event =>', event);
-    console.log('event.target.value =>', event.target.value);
     this.customerData = event.target.value === ""?this.customerData:this.customerData.filter((element:any)=>{
       return element.firstname.toLowerCase() === event.target.value.toLowerCase()
     })
-    console.log('this.customerData =>', this.customerData);
   }
 
   customerNavigate(type:any, data:any){
@@ -58,17 +54,12 @@ export class DashboardComponent implements OnInit{
 
   deleteCustomer(data:any){
     const existingCustomerData = this.userService.customData
-    console.log('existingCustomData =>', existingCustomerData);
-    console.log('data =>', data);
     const updatedCustomerData:any = []
     existingCustomerData.map((item:any)=>{
-      console.log('item =>', item);
       if(item.email !== data.email){
-        console.log('item 2 =>', item);
         updatedCustomerData.push(item);
       }
     })
-    console.log("updatedCustomerData =====>",updatedCustomerData);
     this.closebutton.nativeElement.click();
     this.userService.customData = updatedCustomerData
     this.customer_data()
@@ -76,7 +67,6 @@ export class DashboardComponent implements OnInit{
 
   shareDataToModal(data:any){
     this.deleteData = data
-    console.log('this.deleteData =>', this.deleteData);
   }
 
 }
