@@ -1,0 +1,38 @@
+[
+    {
+        "firstname": "Satyam",
+        "lastname": "Dalvi",
+        "email": "satyam@gmail.com",
+        "phonenumber": "9899876543"
+    },
+    {
+        "firstname": "Sanket",
+        "lastname": "Kadam",
+        "email": "sanket@gmail.com",
+        "phonenumber": "9834543768"
+    },
+    {
+        "firstname": "Satish",
+        "lastname": "Jadhav",
+        "email": "satish@gmail.com",
+        "phonenumber": "9899387543"
+    },
+    {
+        "firstname": "Puja",
+        "lastname": "Patil",
+        "email": "puja@gmail.com",
+        "phonenumber": "9822387654"
+    },
+    {
+        "firstname": "Sayali",
+        "lastname": "Shelke",
+        "email": "sayali@gmail.com",
+        "phonenumber": "9920765629"
+    },
+    {
+        "firstname": "Prasad",
+        "lastname": "Waghmode",
+        "email": "prasad@gmail.com",
+        "phonenumber": "8755456712"
+    }
+]

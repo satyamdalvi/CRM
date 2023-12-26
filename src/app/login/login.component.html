@@ -1,0 +1,29 @@
+<div class="login-container">
+    <div class="login-box">
+        <h2>Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" formControlName="email" required>
+                <small class="text-danger"
+                    *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+                    Please provide a valid email address.
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" formControlName="password" required>
+                <small class="text-danger" *ngIf="!this.loginForm.get('password')?.errors?.['maxlength'] && !this.loginForm.get('password')?.errors?.['minlength'] && loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+                    Please provide a password.
+                </small>
+                <small class="text-danger" *ngIf="this.loginForm.get('password')?.errors?.['minlength']">
+                    Min length is {{ this.loginForm.get('password')?.errors?.['minlength']?.requiredLength }}.
+                </small>
+                <small class="text-danger" *ngIf="this.loginForm.get('password')?.errors?.['maxlength']">
+                    Max length is {{ this.loginForm.get('password')?.errors?.['maxlength']?.requiredLength }}.
+                </small>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
