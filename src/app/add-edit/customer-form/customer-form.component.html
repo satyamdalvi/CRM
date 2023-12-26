@@ -1,5 +1,3 @@
-<!-- <p>customereditor works!</p> -->
-
 <div class="login-container">
     <div class="login-box">
         <h2>Customer Form</h2>
@@ -19,15 +17,6 @@
                     *ngIf="customerForm.get('lastname')?.invalid && (customerForm.get('lastname')?.dirty || customerForm.get('lastname')?.touched)">
                     Please provide a last name.
                 </small>
-                <!-- <small class="text-danger" *ngIf="!this.loginForm.get('password')?.errors?.['maxlength'] && !this.loginForm.get('password')?.errors?.['minlength'] && loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
-                    Please provide a password.
-                </small>
-                <small class="text-danger" *ngIf="this.loginForm.get('password')?.errors?.['minlength']">
-                    Min length is {{ this.loginForm.get('password')?.errors?.['minlength']?.requiredLength }}.
-                </small>
-                <small class="text-danger" *ngIf="this.loginForm.get('password')?.errors?.['maxlength']">
-                    Max length is {{ this.loginForm.get('password')?.errors?.['maxlength']?.requiredLength }}.
-                </small> -->
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
